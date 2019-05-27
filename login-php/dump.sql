@@ -1,11 +1,8 @@
-CREATE DATABASE login;
-USE login;
+CREATE TABLE acesso(
+  id INT NOT NULL AUTO_INCREMENT,
+  usuario VARCHAR(80) NOT NULL,
+  senha VARCHAR(32) NOT NULL,
+  PRIMARY KEY (id));
 
-CREATE TABLE `login`.`usuario` (
-  `usuario_id` INT NOT NULL AUTO_INCREMENT,
-  `usuario` VARCHAR(200) NOT NULL,
-  `senha` VARCHAR(32) NOT NULL,
-  PRIMARY KEY (`usuario_id`));
-
-INSERT INTO `usuario` (`usuario_id`,`usuario`,`senha`) VALUES (1,'canalti','10f722b5984a49bce67d434464fae37e');
-INSERT INTO `usuario` (`usuario_id`,`usuario`,`senha`) VALUES (2,'pedrinho','202cb962ac59075b964b07152d234b70');
+INSERT INTO acesso (id,usuario,senha) VALUES (1,'jaba','123mudar');
+INSERT INTO acesso (id,usuario,senha) VALUES (2,'rafael','123mudei');
