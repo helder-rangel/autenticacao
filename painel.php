@@ -1,30 +1,52 @@
 <?php
-session_start();
-include('verifica_login.php');
+include("header.php");
 ?>
 
-<!DOCTYPE html>
-<html>
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sistema de Acesso - PHP && MySQL</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <h4>Olá, <?php echo $_SESSION['usuario']; ?></h4>
+            <?php
+            //criando tabela e cabeçalho de dados
+            echo "<table border=1></table>";
+            echo "<tr>";
+            echo "<th>Matrícula</th>";
+            echo "<th>Nome</th>";
+            echo "<th>E-mail</th>";
+            echo "<th>Curso</th>";
+            echo "<th>Avatar</th>";
+            echo "</tr>";
 
-</head>
+            //conectando ao banco de dados<mat-checkbox formControlName="formControlName" align="start"
+            <?php
+            $strcon = mysqli_connect('localhost','contr279_egressos','123abc','contr279_egressos') or die('Erro ao conectar ao banco de dados');
+            $sql = "SELECT * FROM egressos";
+            $resultado = mysql_query($strcon,$sql) or die('Eroo ao tentar listar registros');
+            
+            //obtendo os dados por meio de um loop while
+            while ($registro = mysqli_fetch_array($resultado)) 
+            {
+                $matricula = $registro['id'];
+                $nome = $registro['nomeCompactado'];
+                $email = $registro['email'];
+                $curso = $registro['curso'];
+                $avatar = $registro['Avatar'];
+                echo "<tr>";
+                echo "<td>".$matricula."</td>";
+                echo "<td>".$nome. "</td>";
+                echo "<td>".$email. "</td>";
+                echo "<td>".$curso."</td>";
+                echo "<td>".$avatar."</td>";
+                echo "</tr>";
+            }
+            mysql_close($strcon);
+            echo "</table>";
+            ?>
 
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col align-self-center">
-
-                <h4>Olá, <?php echo $_SESSION['usuario']; ?></h4>
-                <h5><a href="logout.php">Sair</a></h5>
+            <h5> <a href ="logout.php"> Sair </a> </h5>
             </div>
-        </div>
-    </div>
-</body>
+            </div>
+            </div>
 
-</html>
+            include ("footer.php");
