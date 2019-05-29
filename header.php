@@ -8,6 +8,7 @@ include('verifica_login.php');
 
 <head>
     <meta charset="utf-8">
+    <html lang="pt-br">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sistema de Acesso - PHP && MySQL</title>
