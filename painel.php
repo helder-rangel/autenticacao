@@ -28,9 +28,9 @@ include("header.php");
                 echo "<td>";
                 echo "<div class='card' style='width: 18rem;'>";
                 if($avatar != null){
-                echo "<img src='https://ifpb.github.io/egressos/img/egressos/{$avatar}' class='card-img-top' alt='$nome'>'";
+                echo "<img src='https://ifpb.github.io/egressos/img/egressos/{$avatar}' class='card-img-top' alt='$nome'>";
                 } else {
-                    echo "<img src='https://ifpb.github.io/egressos/img/egressos/placeholder.jpg/{$avatar}' class='card-img-top' alt='$nome'>'";    
+                    echo "<img src='https://ifpb.github.io/egressos/img/egressos/placeholder.jpg' class='card-img-top' alt='$nome'>";    
                 }
                 echo "<div class='card-body'>";
                 echo "<p class='card-text'>Matrícula: $matricula</p>";
@@ -43,11 +43,10 @@ include("header.php");
                 echo "<td>";
                 echo "<div class='card' style='width: 18rem;'>";
                 if($avatar != null){
-                    echo "<img src='https://ifpb.github.io/egressos/img/egressos/{$avatar}' class='card-img-top' alt='$nome'>'";
+                    echo "<img src='https://ifpb.github.io/egressos/img/egressos/{$avatar}' class='card-img-top' alt='$nome'>";
                     } else {
-                        echo "<img src='https://ifpb.github.io/egressos/img/egressos/placeholder.jpg/{$avatar}' class='card-img-top' alt='$nome'>'";    
+                        echo "<img src='https://ifpb.github.io/egressos/img/egressos/placeholder.jpg' class='card-img-top' alt='$nome'>";    
                     }
-                echo "<img src='https://github.com/ifpb/egressos/tree/master/img/egressos/{$avatar}' class='card-img-top' alt='$nome'>'";
                 echo "<div class='card-body'>";
                 echo "<p class='card-text'>Matrícula: $matricula</p>";
                 echo "<p class='card-text'>Nome: $nome</p>";
@@ -58,11 +57,10 @@ include("header.php");
                 echo "</td>";
                 echo "<div class='card' style='width: 18rem;'>";
                 if($avatar != null){
-                    echo "<img src='https://ifpb.github.io/egressos/img/egressos/{$avatar}' class='card-img-top' alt='$nome'>'";
+                    echo "<img src='https://ifpb.github.io/egressos/img/egressos/{$avatar}' class='card-img-top' alt='$nome'>";
                     } else {
-                        echo "<img src='https://ifpb.github.io/egressos/img/egressos/placeholder.jpg/{$avatar}' class='card-img-top' alt='$nome'>'";    
+                        echo "<img src='https://ifpb.github.io/egressos/img/egressos/placeholder.jpg}' class='card-img-top' alt='$nome'>";    
                     }
-                echo "<img src='https://github.com/ifpb/egressos/tree/master/img/egressos/{$avatar}' class='card-img-top' alt='$nome'>'";
                 echo "<div class='card-body'>";
                 echo "<p class='card-text'>Matrícula: $matricula</p>";
                 echo "<p class='card-text'>Nome: $nome</p>";
@@ -75,11 +73,7 @@ include("header.php");
             }
             mysql_close($strcon);
             echo "</table>";?>
-            <h5> <a href ='logout.php'> Sair </a> </h5>
-            
-
-            
-            
+            <h5> <a href ='logout.php'> Sair </a> </h5>            
             </div>
             </div>
             </div>
