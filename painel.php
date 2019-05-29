@@ -23,12 +23,11 @@ include("header.php");
                 $email = $registro['email'];
                 $curso = $registro['curso'];
                 $avatar = $registro['avatar'];
-
                 echo "<table>";
                 echo "<tr>";
-                echo "<td>"
+                echo "<td>";
                 echo "<div class='card' style='width: 18rem;'>";
-                if(!$avatar == null){
+                if($avatar != null){
                 echo "<img src='https://ifpb.github.io/egressos/img/egressos/{$avatar}' class='card-img-top' alt='$nome'>'";
                 } else {
                     echo "<img src='https://ifpb.github.io/egressos/img/egressos/placeholder.jpg/{$avatar}' class='card-img-top' alt='$nome'>'";    
@@ -43,7 +42,7 @@ include("header.php");
                 echo "</td>";
                 echo "<td>";
                 echo "<div class='card' style='width: 18rem;'>";
-                if(!$avatar == null){
+                if($avatar != null){
                     echo "<img src='https://ifpb.github.io/egressos/img/egressos/{$avatar}' class='card-img-top' alt='$nome'>'";
                     } else {
                         echo "<img src='https://ifpb.github.io/egressos/img/egressos/placeholder.jpg/{$avatar}' class='card-img-top' alt='$nome'>'";    
@@ -58,7 +57,7 @@ include("header.php");
                 echo "</div>";
                 echo "</td>";
                 echo "<div class='card' style='width: 18rem;'>";
-                if(!$avatar == null){
+                if($avatar != null){
                     echo "<img src='https://ifpb.github.io/egressos/img/egressos/{$avatar}' class='card-img-top' alt='$nome'>'";
                     } else {
                         echo "<img src='https://ifpb.github.io/egressos/img/egressos/placeholder.jpg/{$avatar}' class='card-img-top' alt='$nome'>'";    
@@ -72,16 +71,19 @@ include("header.php");
                 echo "</div>";
                 echo "</div>";
                 echo "</td>";
-                echo "</tr>"
+                echo "</tr>";
             }
             mysql_close($strcon);
-            echo "</table>";
-            <h5> <a href ="logout.php"> Sair </a> </h5>
-            ?>
+            echo "</table>";?>
+            <h5> <a href ='logout.php'> Sair </a> </h5>
+            
 
+            
             
             </div>
             </div>
             </div>
+            <?php
 
-            include ("footer.php");
+            include("footer.php");
+            ?>
