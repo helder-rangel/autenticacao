@@ -14,7 +14,7 @@ CREATE TABLE egressos (
   curso varchar(53),
   campus varchar(23),
   egresso varchar(7),
-  avatar varchar(7));
+  avatar varchar(19));
 
 
 
