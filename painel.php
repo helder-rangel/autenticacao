@@ -56,10 +56,11 @@ include("header.php");
             }
             mysql_close($strcon);
             ?>
-            <h5> <a href ='logout.php'> Sair </a> </h5>           
-            </div>
-            </div>
-            </div>
+            <h5> <a href ='logout.php'> Sair </a> </h5>
             <?php
             include("footer.php");
             ?>
+            </div>
+            </div>
+            </div>
+            
