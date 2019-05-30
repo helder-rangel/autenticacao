@@ -14,7 +14,6 @@ include("header.php");
             $strcon = mysqli_connect('localhost','contr279_egressos','123abc','contr279_egressos') or die('Erro ao conectar ao banco de dados');
             $sql = "SELECT * FROM egressos";
             $resultado = mysqli_query($strcon,$sql) or die('Erro ao tentar listar registros');
-
                         
             //obtendo os dados por meio de um while
             while ($registro = mysqli_fetch_array($resultado)) 
@@ -23,25 +22,37 @@ include("header.php");
                 $nome = $registro['nomeCompactado'];
                 $email = $registro['email'];
                 $curso = $registro['curso'];
-                $avatar = $registro['avatar'];
-                
-                echo "<div class='card' style='width: 18rem;'>";
-                if($avatar != null){
-                echo "<img src='https://ifpb.github.io/egressos/img/egressos/{$avatar}' class='card-img-top' alt='$nome'>";
-                } else {
-                    echo "<img src='https://ifpb.github.io/egressos/img/egressos/placeholder.jpg' class='card-img-top' alt='$nome'>";    
+                $github = $registro['github'];
+                $facebook = $registro['facebook'];
+                $twitter = $registro['twitter'];
+                $instagram = $registro['instagram'];
+
+                //$avatar = $registro['avatar'];
+
+
+                echo "<ul class='list-group list-group-horizontal'>";
+                echo "<li class='list-group-item'>$nome</li>";
+                if($email != null){
+                echo "<li class='list-group-item'>$email</li>";
                 }
-                echo "<div class='card-body'>";
-                echo "<p class='card-text'>Matrícula: $matricula</p>";
-                echo "<p class='card-text'>Nome: $nome</p>";
-                echo "<p class='card-text'>E-mail: $email</p>";
-                echo "<p class='card-text'>Curso: $curso</p>";
-                echo "</div>";
-                echo "</div>";
-                echo "</td>";
-                echo "<td>";
-                echo "<div class='card' style='width: 18rem;'>";
-                echo "<br><br>";
+                echo "<li class='list-group-item'>$curso</li>";
+                if($twitter != null){
+                echo "<li class='list-group-item'><a href='$twitter' target='_blank'><img src='icons/twitter.png' border='0'></li>";
+                }
+                if($linkedin != null){
+                echo "<li class='list-group-item'><a href='$linkedin' target='_blank'><img src='icons/linkedin.png' border='0'></li>";
+                }
+                if($facebook != null){
+                echo "<li class='list-group-item'><a href='$facebook' target='_blank'><img src='icons/facebook.png' border='0'></li>";
+                }
+                if($instagram != null){
+                echo "<li class='list-group-item'><a href='$instagram' target='_blank'><img src='icons/instagram.png' border='0'></li>";
+                }
+                if($github != null){
+                    echo "<li class='list-group-item'><a href='$github' target='_blank'><img src='icons/github.png' border='0'></li>";
+                    }
+                echo "</ul>";
+                echo "<br>";
             }
             mysql_close($strcon);
             ?>
